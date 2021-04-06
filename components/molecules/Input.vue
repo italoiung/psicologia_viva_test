@@ -33,7 +33,7 @@ export default {
       if (!this.term.length) return []
       const filteredBreeds = this.$store.state.breeds.filter(
         (breed) =>
-          !!breed.sub.length && breed.name.toLowerCase().includes(this.term)
+          !!breed.sub.length && breed.name.toLowerCase().includes(this.term.toLowerCase())
       )
       return filteredBreeds
     },
@@ -43,7 +43,7 @@ export default {
       this.term = `${value.origin} | ${value.sub}`
     },
     term(value) {
-      this.filterByTerm(value)
+      this.filterByTerm(value.toLowerCase())
     },
   },
   methods: {

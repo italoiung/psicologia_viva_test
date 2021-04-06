@@ -1,0 +1,35 @@
+<template>
+  <v-row justify="center" align="center">
+    <v-col cols="12" sm="8">
+      <v-card>
+        <v-card-title class="headline"
+          >Cachorros da raça <strong>{{ breed }}</strong></v-card-title
+        >
+        <v-card-text>
+          <p>Veja aqui os cachorros da raça selecionada.</p>
+          <p>
+            Você pode favoritar as imagens para ver depois. Bata clicar no botão
+            no rodapé da imagem.
+          </p>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <molecule-dogs :dogs="dogs" :breed="breed" />
+  </v-row>
+</template>
+
+<script>
+export default {
+  async asyncData({ $axios, params }) {
+    const breed = params.breed
+    const dogs = await $axios.$get(`https://dog.ceo/api/breed/${breed}/images`)
+    return { dogs: dogs.message, breed }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+strong {
+  text-transform: capitalize;
+}
+</style>

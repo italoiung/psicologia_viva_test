@@ -81,6 +81,7 @@ export default {
 .v-card {
   &__title {
     display: block;
+    word-break: unset;
   }
 }
 </style>

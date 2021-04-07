@@ -8,7 +8,7 @@
         <v-card-text>
           <p>Veja aqui os cachorros da raça selecionada.</p>
           <p>
-            Você pode favoritar as imagens para ver depois. Bata clicar no botão
+            Você pode favoritar as imagens para ver depois. Basta clicar no botão
             no rodapé da imagem.
           </p>
         </v-card-text>

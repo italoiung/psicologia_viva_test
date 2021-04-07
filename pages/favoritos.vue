@@ -8,7 +8,7 @@
         <v-card-text>
           <p>Veja aqui os cachorros que mais te chamaram atenção.</p>
           <p>
-            Você pode desmarcar as imagens para que saiam dessa listagem. Bata
+            Você pode desmarcar as imagens para que saiam dessa listagem. Basta
             clicar no botão no rodapé da imagem.
           </p>
         </v-card-text>

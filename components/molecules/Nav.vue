@@ -1,9 +1,10 @@
 <template>
   <v-card>
-    <v-tabs center-active optional show-arrows centered>
+    <v-tabs center-active optional show-arrows centered :value="current">
       <v-tab
         v-for="letter in letters"
         :key="letter"
+        :href="`#${letter}`"
         @click="() => filterByLetter(letter)"
         >{{ letter }}</v-tab
       >
@@ -16,6 +17,9 @@ import { mapMutations } from 'vuex'
 
 export default {
   computed: {
+    current() {
+      return this.$store.state.filterLetter
+    },
     letters() {
       const breeds = this.$store.state.breeds
         .map((breed) => breed.name.charAt(0))
